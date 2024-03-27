@@ -1,0 +1,157 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  html {
+    height: 100%;
+  }
+  
+  body {
+    height: 100%;
+  }
+  li {
+    list-style: none;
+  }
+  .fill {
+    // min-height: 100%;
+    // height: 100%;
+    height: calc(100vh - 54px);
+  }
+  
+  .shimmer-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 5rem;
+    gap: 2rem;
+    margin-bottom: 5rem;
+  
+    .shimmer-card {
+      width: 250px;
+      height: 300px;
+      margin: 10px;
+      padding: 20px;
+      box-shadow: 0 0 6px #ddd;
+      #image_shine {
+        width: 100%;
+        height: 50%;
+      }
+  
+      #lines_shine {
+        height: 20px;
+        width: 100%;
+        margin-top: 1rem;
+      }
+  
+      .shine {
+        background-image: linear-gradient(
+          to right,
+          #f6f7f8 0%,
+          #edeef1 20%,
+          #f6f7f8 40%,
+          #f6f7f8 100%
+        );
+        animation: left-to-right 2s linear infinite;
+      }
+  
+      @keyframes left-to-right {
+        0% {
+          background-position: -450px 0;
+        }
+        100% {
+          background-position: 450px 0;
+        }
+      }
+    }
+  }
+  .movielist {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding-top: 3rem;
+    flex-wrap: wrap;
+  
+    .moviecard {
+      background-color: black;
+      width: 250px;
+      border: 1px solid wheat;
+      padding: 5px;
+      box-shadow: 1px 1px 1px 1px rgb(181, 179, 176);
+      .title {
+        padding: 10px;
+        font-size: 15px;
+        font-weight: 700;
+        color: floralwhite;
+      }
+  
+      img {
+        width: 100%;
+        height: 300px;
+      }
+      .desc {
+        padding-left: 2px;
+        padding-right: 2px;
+        font-size: 13px;
+        overflow: hidden;
+        max-height: 5em;
+        line-height: 1.8em;
+        text-overflow: ellipsis;
+        color: floralwhite;
+      }
+      .summary {
+        justify-content: center;
+        display: flex;
+        color: white;
+        font-weight: 600;
+      }
+      .watch {
+        justify-content: center;
+        display: flex;
+        background-color: red;
+        margin-top: 5px;
+        color: white;
+  
+        a {
+          text-decoration: none;
+          color: white;
+          font-weight: 600;
+        }
+      }
+      &:hover {
+        transition: all 0.5s ease-in-out;
+        transform: scale(1.1);
+      }
+    }
+  }
+  
+  .heading {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-top: 2rem;
+    padding: 5px;
+    box-shadow: 0px 1px 3px 0px #898787;
+  }
+  .desc {
+    font-size: 15px;
+    padding: 5px;
+    box-shadow: 0px 1px 3px 0px #898787;
+    margin-top: 1rem;
+  }
+  
+  #signup {
+    p {
+      margin-top: 5px;
+      color: red;
+    }
+  }
+  .dash_items {
+    border: 1px solid;
+    padding: 1rem;
+    align-items: center;
+  }
+  .movielist {
+    a {
+      text-decoration: none;
+    }
+  }

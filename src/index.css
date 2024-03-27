@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* :root {
+  --bg-color: linear-gradient(90deg, #0a0b13, #070920, #040828);
+  --primary-color: #00ffc6;
+  --bg-dim-color: #dee2e9; */
+  /* --bg-dim-color: rgb(243 244 246 /1); */
+  /* --fore-color: white;
+  --fore-dim-color: #cdcdcd;
+  --bg-disabled-color: #f2f3f4;
+  --header-bg-color: rgb(243 244 246 / 1);
+  --disabled-color: #f2f3f4;
+} */
+
+/* body {
+  background: var(--bg-color);
+  color: var(--fore-color);
+} */
