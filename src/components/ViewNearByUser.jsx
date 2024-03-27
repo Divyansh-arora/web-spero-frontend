@@ -28,7 +28,7 @@ const ViewNearByUser = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/getuser/${latitude}`);
+        const response = await fetch(`https://web-spero-backend.onrender.com/getuser/${latitude}`);
         const data = await response.json();
         setUserData(data.data);
       } catch (error) {
@@ -45,7 +45,7 @@ const ViewNearByUser = () => {
 
   const handleSave = async (updatedFields, userId) => {
     try {
-      const response = await fetch(`http://localhost:5000/updateUser/${userId}`, {
+      const response = await fetch(`https://web-spero-backend.onrender.com/updateUser/${userId}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',

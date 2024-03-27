@@ -50,7 +50,7 @@ function SignUpForm() {
       onSubmit: async (values, action) => {
         console.log('THe values are ',values)
         await Axios.post(
-          'http://localhost:5000/addUser',
+          'https://web-spero-backend.onrender.com/addUser',
           {
             ...values,
             latitude: latitude, // Include latitude in the request body
