@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router';
 const ViewNearByUser = () => {
   const [userData, setUserData] = useState([]);
   const [editableUserId, setEditableUserId] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
   const navegate = useNavigate();
   const [latitude, setLatitude] = useState(null); 
   useEffect(() => {
@@ -15,10 +16,12 @@ const ViewNearByUser = () => {
           },
           error => {
             console.error("Error getting geolocation:", error);
+            setIsLoading(false);
           }
         );
       } else {
         console.error("Geolocation is not supported by this browser.");
+        setIsLoading(false);
       }
     };
 
@@ -31,14 +34,17 @@ const ViewNearByUser = () => {
         const response = await fetch(`https://web-spero-backend.onrender.com/getuser/${latitude}`);
         const data = await response.json();
         setUserData(data.data);
+        setIsLoading(false); // Set loading to false after data fetching is complete
       } catch (error) {
         console.error('Error fetching user data:', error);
+        setIsLoading(false); // Set loading to false if there's an error
       }
     };
 
-    fetchData();
+    if (latitude !== null) {
+      fetchData();
+    }
   }, [latitude]);
-
   const handleEdit = (userId) => {
     setEditableUserId(userId);
   };
@@ -78,7 +84,9 @@ const ViewNearByUser = () => {
       <div className='flex justify-between'>
       <h1 className="text-3xl font-bold my-4">User Details</h1>
       </div>
-     
+      {isLoading ? (
+        <div>Loading Data...</div>
+      ) : (
       <table className="w-full border-collapse border border-gray-200">
         <thead className="bg-gray-100">
           <tr>
@@ -180,6 +188,7 @@ const ViewNearByUser = () => {
           ))}
         </tbody>
       </table>
+      )}
     </div>
   );
 };

@@ -11,18 +11,6 @@ import ViewUsers from "./components/ViewUsers";
 import ViewNearByUser from "./components/ViewNearByUser";
 
 
-// function App() {
-//   return (
-//     <>
-//       <Router>
-//         <Routes>
-//           <Route path="/" element={<Home/>} />
-//           <Route path="/login" element={<LoginForm />} />
-//         </Routes>
-//       </Router>
-//     </>
-//   );
-// }
 function App() {
   return (
     <Provider store={store}>
@@ -31,7 +19,7 @@ function App() {
           <Route path="/" element={<LoginForm />} />
           <Route path="/addUser" element={<SignUpForm />} />
           <Route path="/viewusers" element={<ViewUsers />} />
-          <Route path="//viewnearby" element={<ViewNearByUser />} />
+          <Route path="/viewnearby" element={<ViewNearByUser />} />
         </Routes>
       </Router>
     </Provider>
